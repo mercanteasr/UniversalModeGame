@@ -18,13 +18,13 @@ public class Universal {
             System.out.println("Welcome to UUniversal Mode Game");
             System.out.println("Want to read our description?");
 
-            description = sc.nextBoolean();
+            /*description = sc.nextBoolean();
             if (description == true) {
 
                 System.out.println("This mini-game was developed by Ricardo Augusto as a practical learning project.");
                 System.out.println(" Its main purpose is to apply and consolidate fundamental Java programming concepts");
                 System.out.println("serving as a simple hands-on exercise to continuously improve software development skills.");
-            }
+            }*/
 
             System.out.println("\n _-_-_ Attributes _-_-_ \n");
 
@@ -33,7 +33,7 @@ public class Universal {
             System.out.println("Second Champion\n");
             players.assign(players.player2);
 
-            players.testechamar();
+            players.battle();
 
 
 
