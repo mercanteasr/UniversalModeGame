@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Universal {
@@ -14,6 +15,16 @@ public class Universal {
 
         boolean opcao = true;
         boolean description;
+        boolean start;
+        boolean died = false;
+
+        if(players.player1.getDefensePlayer() <= 0){
+            died = true;
+        } else if (players.player2.getDefensePlayer() <= 0){
+            died = true;
+        }
+
+
         do {
             System.out.println("Welcome to UUniversal Mode Game");
             System.out.println("Want to read our description?");
@@ -33,14 +44,20 @@ public class Universal {
             System.out.println("Second Champion\n");
             players.assign(players.player2);
 
-            players.battle();
+            players.testechamar();
 
-
-
+            do {
+                players.battle();
+                if (players.player1.getDefensePlayer() > 0) {
+                    if (players.player2.getDefensePlayer() > 0) {
+                        players.battle();
+                    }
+                }
+            }while (died = true);
 
                 System.out.println("exit or continue? [true] or [false]");
                 opcao = sc.nextBoolean();
-            }while (opcao != false) ;
+            }while (opcao != false);
 
     }
 
